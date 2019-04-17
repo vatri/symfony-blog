@@ -1,8 +1,13 @@
-Feature:
-  In order to prove that the Behat Symfony extension is correctly installed
-  As a user
-  I want to have a demo scenario
+Feature: Navigate to different menus
 
-  Scenario: It receives a response from Symfony's kernel
-    When a demo scenario sends a request to "/"
-    Then the response should be received
+  Scenario: I navigate on the home page
+      When I am on the homepage
+      Then the response status code should be 200
+      Then I should see text matching "Training Symfony-blog"
+      Then I follow "Log in"
+      Then I should see text matching "Training Symfony-blog"
+      Then I should see text matching "Log in"
+      Then I should see text matching "Username"
+      Then I should see text matching "Password"
+      Then I follow "Sign in"
+      Then I should see text matching "Sign in"

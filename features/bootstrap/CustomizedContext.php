@@ -23,20 +23,10 @@ class CustomizedContext implements Context
     }
 
     /**
-     * @When a demo scenario sends a request to :path
+     * @When I test env
      */
     public function aDemoScenarioSendsARequestTo(string $path)
     {
         $this->response = $this->kernel->handle(Request::create($path, 'GET'));
-    }
-
-    /**
-     * @Then the response should be received
-     */
-    public function theResponseShouldBeReceived()
-    {
-        if ($this->response === null) {
-            throw new \RuntimeException('No response received');
-        }
     }
 }
