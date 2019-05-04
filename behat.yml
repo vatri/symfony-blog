@@ -16,3 +16,7 @@ default:
             sessions:
                 default:
                     symfony2: ~
+                chrome_javascript_session:
+                    selenium2:
+                        wd_host: "http://chrome:4444/wd/hub"
+                        browser: chrome
